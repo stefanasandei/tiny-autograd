@@ -1,0 +1,44 @@
+
+digraph G {
+    rankdir=LR;
+    node [shape=box, fontsize=12];
+
+	node644303951382802626 [label="x1 | data 2 | grad -1.502915", shape=record];
+	node644302851871174415 [label="x2 | data 0 | grad 0", shape=record];
+	node633748639754058501 [label="w1 | data -3 | grad 1.0019433", shape=record];
+	node633745341219173868 [label="w2 | data 1 | grad 0", shape=record];
+	node12638190499090526629 [label="b | data 6.88 | grad 0", shape=record];
+	node6015069318777843812 [label="x1*w1 | data -6 | grad 0.5009717", shape=record];
+	node601506931877784381242 [label="*", shape=ellipse];
+	node601506931877784381242 -> node6015069318777843812;
+	node2872844269851498430 [label="x2*w2 | data 0 | grad 0", shape=record];
+	node287284426985149843042 [label="*", shape=ellipse];
+	node287284426985149843042 -> node2872844269851498430;
+	node3803822637546715942 [label="x1*w1+x2*w2 | data -6 | grad 1.0019433", shape=record];
+	node380382263754671594243 [label="+", shape=ellipse];
+	node380382263754671594243 -> node3803822637546715942;
+	node12638194897137039473 [label="n | data 0.8800001 | grad 1.0019433", shape=record];
+	node1263819489713703947343 [label="+", shape=ellipse];
+	node1263819489713703947343 -> node12638194897137039473;
+		node15394110180662076895 [label="data 0.70641935 | grad 1", shape=record];
+		node15394110180662076895116 [label="tanh", shape=ellipse];
+		node15394110180662076895116 -> 	node15394110180662076895;
+	node12638194897137039473 [label="n | data 0.8800001 | grad 1.0019433", shape=record];
+	node12638194897137039473 -> 	node15394110180662076895116;
+	node3803822637546715942 [label="x1*w1+x2*w2 | data -6 | grad 1.0019433", shape=record];
+	node3803822637546715942 -> node1263819489713703947343;
+	node6015069318777843812 [label="x1*w1 | data -6 | grad 0.5009717", shape=record];
+	node6015069318777843812 -> node380382263754671594243;
+	node644303951382802626 [label="x1 | data 2 | grad -1.502915", shape=record];
+	node644303951382802626 -> node601506931877784381242;
+	node633748639754058501 [label="w1 | data -3 | grad 1.0019433", shape=record];
+	node633748639754058501 -> node601506931877784381242;
+	node2872844269851498430 [label="x2*w2 | data 0 | grad 0", shape=record];
+	node2872844269851498430 -> node380382263754671594243;
+	node644302851871174415 [label="x2 | data 0 | grad 0", shape=record];
+	node644302851871174415 -> node287284426985149843042;
+	node633745341219173868 [label="w2 | data 1 | grad 0", shape=record];
+	node633745341219173868 -> node287284426985149843042;
+	node12638190499090526629 [label="b | data 6.88 | grad 0", shape=record];
+	node12638190499090526629 -> node1263819489713703947343;
+}
