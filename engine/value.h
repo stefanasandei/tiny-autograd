@@ -1,6 +1,12 @@
+//
+// Created by Stefan on 10/1/2023.
+//
+
 #pragma once
 
 #include <ostream>
+#include <string>
+#include <set>
 
 namespace TinyAutograd {
 
@@ -9,14 +15,25 @@ namespace TinyAutograd {
     class Value {
     public:
         explicit Value(T data);
+        Value(T data, const std::set<Value>& children, const std::string& op);
 
-        Value operator+(Value& other) const;
-        Value operator*(Value& other) const;
+        Value operator+(const Value& other) const;
+        Value operator*(const Value& other) const;
+
+        std::partial_ordering operator<=>(const Value& other) const;
 
         friend std::ostream &operator<< (std::ostream &out,
-                                           Value v);
+                                           const Value& v);
+
+        [[nodiscard]] std::set<Value> GetPrevious() const { return m_Previous; }
+        [[nodiscard]] std::string GetOperation() const { return m_Operation; }
+
     public:
         T Data;
+
+    private:
+        std::set<Value> m_Previous;
+        std::string m_Operation;
     };
 
 }

@@ -3,4 +3,9 @@ project(tiny_autograd)
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_library(tiny_autograd STATIC tiny_autograd.h value.h value.cpp)
+add_library(tiny_autograd STATIC tiny_autograd.h value.h value.cpp
+        viz.h
+        viz.cpp)
+
+
+target_include_directories(tiny_autograd PRIVATE ..)
