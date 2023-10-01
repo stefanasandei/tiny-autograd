@@ -1,6 +1,0 @@
-#ifndef TINY_AUTOGRAD_LIBRARY_H
-#define TINY_AUTOGRAD_LIBRARY_H
-
-void hello();
-
-#endif //TINY_AUTOGRAD_LIBRARY_H

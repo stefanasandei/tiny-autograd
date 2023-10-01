@@ -3,4 +3,4 @@ project(tiny_autograd)
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_library(tiny_autograd STATIC library.cpp)
+add_library(tiny_autograd STATIC tiny_autograd.h value.h value.cpp)
