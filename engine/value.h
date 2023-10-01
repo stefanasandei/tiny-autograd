@@ -15,7 +15,7 @@ namespace TinyAutograd {
 
     class Value {
     public:
-        explicit Value(T data);
+        Value(T data);
         Value(T data, const std::vector<const Value*>& children, const std::string& op);
 
         Value operator+(const Value& other) const;
